@@ -67,13 +67,13 @@ def find_primes(max):
     return primes_save, fake_primes
 
 
-real_primes, fake_primes = find_primes(100000)
+real_primes, fake_primes = find_primes(1000)
 
 fps_miller = [fp for fp in miller_rabin_prime if not (fp in real_primes)]
 
 print(len(real_primes), len(fake_primes), len(fps_miller))
 
-for fp in fps_miller:
+for fp in fake_primes:
     print (fp, factors(fp))
     
 
